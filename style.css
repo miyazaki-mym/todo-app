@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.todo-container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* 入力欄とボタンの間隔 */
+}
+
+#taskInput {
+    flex-grow: 1; /* 入力欄が可能な限り幅を取る */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 0; /* flexbox内での幅計算安定化 */
+}
+
+#addTaskBtn {
+    width: 60px;
+    padding: 8px 0;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addTaskBtn:hover {
+    background-color: #0056b3;
+}
+
+#taskList {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between; /* タスク名と削除ボタンを左右に分ける */
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+#taskList li button {
+    background-color: transparent; /* 背景を透明に */
+    color: #dc3545;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px 6px; /* 小さい余白 */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* 折り返し防止を追加 */
+}
+
+#taskList li button:hover {
+    background-color: #f8d7da; /* 薄い赤系背景 */
+}
