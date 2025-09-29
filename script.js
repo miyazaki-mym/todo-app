@@ -21,3 +21,19 @@ const addTask = (task) => {
   li.appendChild(delBtn);
   todoList.appendChild(li);
 };
+
+window.onload = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const todos = await response.json();
+    const firstFive = todos.slice(0, 5);
+    const listElement = document.getElementById('taskList');
+    firstFive.forEach(todo => {
+      const li = document.createElement('li');
+      li.textContent = todo.title;
+      listElement.appendChild(li);
+    });
+  } catch (error) {
+    console.error('データ取得時にエラーが発生しました:', error);
+  }
+};
