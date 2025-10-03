@@ -46,5 +46,7 @@ window.onload = async () => {
     });
   } catch (error) {
     console.error('データ取得時にエラーが発生しました:', error); // エラー処理
+    const errorDiv = document.getElementById('errorMessage');
+    errorDiv.textContent = '初期データ読み込みに失敗しました。時間をおいて再度お試しください。';
   }
 };
